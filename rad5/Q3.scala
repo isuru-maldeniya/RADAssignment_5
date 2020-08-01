@@ -1,7 +1,7 @@
 object Q3 extends App {
     var accountList:List[Account] = List()
 
-    def accCreate(nic:String, accId: Int):Unit = {
+    def accountCreation(nic:String, accId: Int):Unit = {
         val acc = new Account(nic, accId)
         accountList = accountList ::: acc :: Nil
         println(accountList)
@@ -9,16 +9,15 @@ object Q3 extends App {
 
     val find = (a:Int, b:List[Account]) => b.filter(account => account.accId.equals(a))
 
-    /*              Driver Code                */
+    /*              end of drivers part                */
     
-    accCreate("1",1)
-    accCreate("2",2)
+    accountCreation("1",1)
+    accountCreation("2",2)
 
-    //deposit money
     find(1, accountList)(0).deposit(1000)
     println(find(1, accountList)(0))
 
-    //transfer money
+  
     find(1, accountList)(0).transfer(2, 100.0)
     println(find(2, accountList)(0))
 }
