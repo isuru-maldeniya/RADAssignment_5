@@ -3,7 +3,7 @@ object Q4 extends App {
 
     var accountList:List[Account] = List()
 
-    def accCreate(nic:String, accId: Int):Unit = {
+    def accountCreation(nic:String, accId: Int):Unit = {
         val acc = new Account(nic, accId)
         accountList = accountList ::: acc :: Nil
         println(accountList)
@@ -18,8 +18,8 @@ object Q4 extends App {
     /*              Driver Code                */
     
     //create accounts
-    accCreate("1",1)
-    accCreate("2",2)
+    accountCreation("1",1)
+    accountCreation("2",2)
 
     //deposit money
     find(1, accountList)(0).deposit(1000)
